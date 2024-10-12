@@ -3,39 +3,46 @@ package com.example.GestionEquipaje.model;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import jakarta.persistence.Entity;
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
-public class luggage implements Serializable {
+@Table(name = "Equipaje")
+public class Luggage implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int luggage_id;
+    private Long luggage_id;
     private float weight;
     private String dimentions;
     private String luggage_location;
     private int quantity;
     private String type_luggage;
-    private int booking_id;
-    private int payment_id;
-    private int luggage_type_id;
+    
+    @ManyToOne
+    @JoinColumn (name = "id_reserva")
+    private Booking booking;
+    @ManyToOne
+    @JoinColumn (name = "id_politica")
+    private ChargePolicy chargePolicy;
 
-    public luggage() {
+    public Luggage() {
     }
 
-    public luggage(int luggage_id, float weight, String dimentions, String luggage_location, int quantity, String type_luggage, int booking_id, int payment_id, int luggage_type_id) {
-        this.luggage_id = luggage_id;
+    public Luggage(float weight, String dimentions, String luggage_location, int quantity, String type_luggage, Booking booking, ChargePolicy chargePolicy) {
         this.weight = weight;
         this.dimentions = dimentions;
         this.luggage_location = luggage_location;
         this.quantity = quantity;
         this.type_luggage = type_luggage;
-        this.booking_id = booking_id;
-        this.payment_id = payment_id;
-        this.luggage_type_id = luggage_type_id;
+        this.booking = booking;
+        this.chargePolicy = chargePolicy;
     }
 
-    public int getLuggage_id() {
+    public Long getLuggage_id() {
         return luggage_id;
     }
 
@@ -59,19 +66,15 @@ public class luggage implements Serializable {
         return type_luggage;
     }
 
-    public int getBooking_id() {
-        return booking_id;
+    public Booking getBooking() {
+        return booking;
     }
 
-    public int getPayment_id() {
-        return payment_id;
+    public ChargePolicy getChargePolicy() {
+        return chargePolicy;
     }
 
-    public int getLuggage_type_id() {
-        return luggage_type_id;
-    }
-
-    public void setLuggage_id(int luggage_id) {
+    public void setLuggage_id(Long luggage_id) {
         this.luggage_id = luggage_id;
     }
 
@@ -95,16 +98,25 @@ public class luggage implements Serializable {
         this.type_luggage = type_luggage;
     }
 
-    public void setBooking_id(int booking_id) {
-        this.booking_id = booking_id;
+    public void setBooking(Booking booking) {
+        this.booking = booking;
     }
 
-    public void setPayment_id(int payment_id) {
-        this.payment_id = payment_id;
+    public void setChargePolicy(ChargePolicy chargePolicy) {
+        this.chargePolicy = chargePolicy;
     }
 
-    public void setLuggage_type_id(int luggage_type_id) {
-        this.luggage_type_id = luggage_type_id;
+    @Override 
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Luggage luggage = (Luggage) o;
+        return Objects.equals(getLuggage_id(), luggage.getLuggage_id() );
+    }
+
+    @Override 
+    public int hashCode() {
+        return Objects.hash(getLuggage_id());
     }
 
     @Override

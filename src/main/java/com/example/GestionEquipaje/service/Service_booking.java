@@ -12,33 +12,18 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
 
-import com.example.GestionEquipaje.model.Luggage;
-import com.example.GestionEquipaje.repository.Repository_luggage;
+import com.example.GestionEquipaje.model.Booking;
+import com.example.GestionEquipaje.repository.Repository_booking;
 
 @Service
-public class Service_luggage implements Repository_luggage{
+public class Service_booking implements Repository_booking{
 
     @Autowired
-    private Repository_luggage repository_luggage;
+    private Repository_booking repository_booking;
 
     @Override
-    public List<Luggage> findAll() {
-        return repository_luggage.findAll();
-    }
-
-    @Override
-    public void delete(Luggage entity) {
-        repository_luggage.delete(entity);
-    }
-
-    @Override
-    public void deleteById(Long id) {
-        repository_luggage.deleteById(id);
-    }
-
-    @Override
-    public <S extends Luggage> S save(S entity) {
-        return repository_luggage.save(entity);
+    public List<Booking> findAll(Sort sort) {
+        return repository_booking.findAll();
     }
 
     @Override
@@ -48,19 +33,19 @@ public class Service_luggage implements Repository_luggage{
     }
 
     @Override
-    public <S extends Luggage> S saveAndFlush(S entity) {
+    public <S extends Booking> S saveAndFlush(S entity) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'saveAndFlush'");
     }
 
     @Override
-    public <S extends Luggage> List<S> saveAllAndFlush(Iterable<S> entities) {
+    public <S extends Booking> List<S> saveAllAndFlush(Iterable<S> entities) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'saveAllAndFlush'");
     }
 
     @Override
-    public void deleteAllInBatch(Iterable<Luggage> entities) {
+    public void deleteAllInBatch(Iterable<Booking> entities) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'deleteAllInBatch'");
     }
@@ -78,74 +63,64 @@ public class Service_luggage implements Repository_luggage{
     }
 
     @Override
-    public Luggage getOne(Long id) {
+    public Booking getOne(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getOne'");
     }
 
     @Override
-    public Luggage getById(Long id) {
+    public Booking getById(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getById'");
     }
 
     @Override
-    public Luggage getReferenceById(Long id) {
+    public Booking getReferenceById(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getReferenceById'");
     }
 
     @Override
-    public <S extends Luggage> List<S> findAll(Example<S> example) {
+    public <S extends Booking> List<S> findAll(Example<S> example) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
 
     @Override
-    public <S extends Luggage> List<S> findAll(Example<S> example, Sort sort) {
+    public <S extends Booking> List<S> findAll(Example<S> example, Sort sort) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
 
     @Override
-    public List<Luggage> findAllById(Iterable<Long> ids) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAllById'");
-    }
-
-    @Override
-    public <S extends Luggage> List<S> saveAll(Iterable<S> entities) {
+    public <S extends Booking> List<S> saveAll(Iterable<S> entities) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'saveAll'");
     }
 
     @Override
-    public long count() {
+    public List<Booking> findAll() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
-    }
-
-    
-
-    @Override
-    public void deleteAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAll'");
+        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
 
     @Override
-    public void deleteAll(Iterable<? extends Luggage> entities) {
+    public List<Booking> findAllById(Iterable<Long> ids) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAll'");
+        throw new UnsupportedOperationException("Unimplemented method 'findAllById'");
     }
 
     @Override
-    public void deleteAllById(Iterable<? extends Long> ids) {
+    public <S extends Booking> S save(S entity) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllById'");
+        throw new UnsupportedOperationException("Unimplemented method 'save'");
     }
 
-    
+    @Override
+    public Optional<Booking> findById(Long id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+    }
 
     @Override
     public boolean existsById(Long id) {
@@ -154,53 +129,77 @@ public class Service_luggage implements Repository_luggage{
     }
 
     @Override
-    public Optional<Luggage> findById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
-    }
-
-    
-
-    @Override
-    public List<Luggage> findAll(Sort sort) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
-    }
-
-    @Override
-    public Page<Luggage> findAll(Pageable pageable) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
-    }
-
-    @Override
-    public <S extends Luggage> long count(Example<S> example) {
+    public long count() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'count'");
     }
 
     @Override
-    public <S extends Luggage> boolean exists(Example<S> example) {
+    public void deleteById(Long id) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exists'");
+        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
     }
 
     @Override
-    public <S extends Luggage> Page<S> findAll(Example<S> example, Pageable pageable) {
+    public void delete(Booking entity) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    }
+
+    @Override
+    public void deleteAllById(Iterable<? extends Long> ids) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deleteAllById'");
+    }
+
+    @Override
+    public void deleteAll(Iterable<? extends Booking> entities) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deleteAll'");
+    }
+
+    @Override
+    public void deleteAll() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'deleteAll'");
+    }
+
+    
+
+    @Override
+    public Page<Booking> findAll(Pageable pageable) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
 
     @Override
-    public <S extends Luggage, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
+    public <S extends Booking> Optional<S> findOne(Example<S> example) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findBy'");
+        throw new UnsupportedOperationException("Unimplemented method 'findOne'");
     }
 
     @Override
-    public <S extends Luggage> Optional<S> findOne(Example<S> example) {
+    public <S extends Booking> Page<S> findAll(Example<S> example, Pageable pageable) {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findOne'");
+        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    }
+
+    @Override
+    public <S extends Booking> long count(Example<S> example) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'count'");
+    }
+
+    @Override
+    public <S extends Booking> boolean exists(Example<S> example) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'exists'");
+    }
+
+    @Override
+    public <S extends Booking, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findBy'");
     }
 
 }
