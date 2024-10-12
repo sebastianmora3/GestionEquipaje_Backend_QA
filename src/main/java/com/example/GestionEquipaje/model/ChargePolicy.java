@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 public class ChargePolicy implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int chargePolicy_id;
+    private Long chargePolicy_id;
     private String type_policy;
 
     public ChargePolicy(String type_policy) {
@@ -21,11 +21,11 @@ public class ChargePolicy implements Serializable{
         this.type_policy = type_policy;
     }
 
-    public int getChargePolicy_id() {
+    public Long getChargePolicy_id() {
         return chargePolicy_id;
     }
 
-    public void setChargePolicy_id(int chargePolicy_id) {
+    public void setChargePolicy_id(Long chargePolicy_id) {
         this.chargePolicy_id = chargePolicy_id;
     }
 
