@@ -1,4 +1,2 @@
-# **GestionEquipaje_Backend**
-# Daniel
-# Yohan
-# Alexander
+# GestionEquipaje_Backend
+Duvan - Daniel - Yohan - Alexander
