@@ -1,14 +1,15 @@
 package com.example.GestionEquipaje.model;
 
+import java.io.Serializable;
+import java.util.Objects;
+
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Entity;
-import java.io.Serializable;
-import java.util.Objects;
 
 @Entity
 @Table(name = "Equipaje")
@@ -32,6 +33,7 @@ public class Luggage implements Serializable {
     public Luggage() {
     }
 
+    // Este es el Constructor que contiene todo los parametros que recibe el equipaje
     public Luggage(float weight, String dimentions, String luggage_location, int quantity, String type_luggage, Booking booking, ChargePolicy chargePolicy) {
         this.weight = weight;
         this.dimentions = dimentions;

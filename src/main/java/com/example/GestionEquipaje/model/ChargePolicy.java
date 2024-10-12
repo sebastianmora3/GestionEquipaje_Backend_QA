@@ -12,6 +12,7 @@ import jakarta.persistence.Table;
 @Table(name = "Politicas")
 public class ChargePolicy implements Serializable{
     @Id
+    // Declaramos el constructor
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long chargePolicy_id;
     private String type_policy;
