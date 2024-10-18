@@ -20,7 +20,17 @@ public class Service_luggage implements Repository_luggage{
 
     @Autowired
     private Repository_luggage repository_luggage;
+//Metodos generados por nosotros------------------------------------------------------------------------------------
 
+
+
+
+
+
+
+
+
+//Metodos por default-----------------------------------------------------------------------------------------------
     @SuppressWarnings("null")
     @Override
     public List<Luggage> findAll() {
@@ -79,36 +89,42 @@ public class Service_luggage implements Repository_luggage{
         throw new UnsupportedOperationException("Unimplemented method 'deleteAllInBatch'");
     }
 
+    @SuppressWarnings("null")
     @Override
     public Luggage getOne(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getOne'");
     }
 
+    @SuppressWarnings("null")
     @Override
     public Luggage getById(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getById'");
     }
 
+    @SuppressWarnings("null")
     @Override
     public Luggage getReferenceById(Long id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getReferenceById'");
     }
 
+    @SuppressWarnings("null")
     @Override
     public <S extends Luggage> List<S> findAll(Example<S> example) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
 
+    @SuppressWarnings("null")
     @Override
     public <S extends Luggage> List<S> findAll(Example<S> example, Sort sort) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findAll'");
     }
 
+    @SuppressWarnings("null")
     @Override
     public List<Luggage> findAllById(Iterable<Long> ids) {
         // TODO Auto-generated method stub
@@ -128,7 +144,6 @@ public class Service_luggage implements Repository_luggage{
     }
 
     
-
     @Override
     public void deleteAll() {
         // TODO Auto-generated method stub
