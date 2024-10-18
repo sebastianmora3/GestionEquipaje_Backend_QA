@@ -1,5 +1,5 @@
 package com.example.GestionEquipaje.controller;
-
+ 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,41 +19,41 @@ import com.example.GestionEquipaje.service.Service_luggage;
 
 
 @RestController
-@RequestMapping("/equipaje")
+@RequestMapping("/api/Luggage")
 public class Controller_luggage {
 
     @Autowired
     private Service_luggage service_luggage;
-    
-    @GetMapping ("/consultar")
-    private ResponseEntity<List<Luggage>> getAllLuggage () {
-        return ResponseEntity.ok(service_luggage.findAll());
-    }
-
-    // creamos el post para agregar el equipaje 
+//---------------------------------------------------------------------------
+    // Endpoint -> Para consultar todos los equipajes
+//---------------------------------------------------------------------------   
+       // Endpoint para obtener todos los equipajes
+       @GetMapping ("/consultar")
+       private ResponseEntity<List<Luggage>> getAllLuggage () {
+           return ResponseEntity.ok(service_luggage.findAll());
+       }
+       
+//---------------------------------------------------------------------------
+    // Endpoint -> Para agregar el equipaje 
     @PostMapping("/agregar")
     private ResponseEntity<Luggage> addLuggage (@RequestBody Luggage luggage)  {
         Luggage newLuggage = service_luggage.save(luggage);
         return ResponseEntity.status(HttpStatus.CREATED).body(newLuggage);
     } 
-
-    // creamos el put para la modificacion de un equipaje
+//---------------------------------------------------------------------------
+    // Endpoint -> Para la modificacion de un equipaje
     @PutMapping("path/{id}")
     public String putMethodName(@PathVariable String id, @RequestBody String entity) {
-        //TODO: process PUT request
-        
         return entity;
     }
-    //Creamos el de eliminar un equipaje con id
+//---------------------------------------------------------------------------
+    //Endpoint -> Para eliminar un equipaje con id
     @DeleteMapping("/eliminar/{id}")
     public void deleteEquipaje (@PathVariable Long id){
 
        service_luggage.deleteById(id);
     }
-
-
-
-
+//---------------------------------------------------------------------------
 
     // return ResponseEntity.created(new URI("/agregar/"+newLuggage.tLuggage_id())).body(newLuggage);
 

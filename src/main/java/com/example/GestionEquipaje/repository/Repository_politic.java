@@ -1,10 +1,11 @@
 package com.example.GestionEquipaje.repository;
 
-import com.example.GestionEquipaje.model.ChargePolicy;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import com.example.GestionEquipaje.model.CollectionPolitic;
+
 @Repository
-public interface Repository_policy extends JpaRepository<ChargePolicy, Long>  {
+public interface Repository_politic extends JpaRepository<CollectionPolitic, Long>  {
     
 }

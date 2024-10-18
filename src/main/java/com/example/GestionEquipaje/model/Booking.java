@@ -9,15 +9,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Reserva")
+@Table(name = "Booking")
 public class Booking implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long booking_id;
     private String status;
-
-    public Booking() {
-    }
 
     public Booking(String status) {
         super();

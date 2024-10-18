@@ -12,194 +12,163 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery.FetchableFluentQuery;
 import org.springframework.stereotype.Service;
 
-import com.example.GestionEquipaje.model.ChargePolicy;
-import com.example.GestionEquipaje.repository.Repository_policy;
+import com.example.GestionEquipaje.model.CollectionPolitic;
+import com.example.GestionEquipaje.repository.Repository_politic;
 
 @Service
-public class Service_policy implements Repository_policy{
+public class Service_policy implements Repository_politic{
 
     @Autowired
-    private Repository_policy repository_policy;
+    private Repository_politic repository_policy;
 
     @Override
     public void flush() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'flush'");
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public <S extends ChargePolicy> S saveAndFlush(S entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveAndFlush'");
+    public <S extends CollectionPolitic> S saveAndFlush(S entity) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public <S extends ChargePolicy> List<S> saveAllAndFlush(Iterable<S> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveAllAndFlush'");
+    public <S extends CollectionPolitic> List<S> saveAllAndFlush(Iterable<S> entities) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public void deleteAllInBatch(Iterable<ChargePolicy> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllInBatch'");
+    public void deleteAllInBatch(Iterable<CollectionPolitic> entities) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void deleteAllByIdInBatch(Iterable<Long> ids) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllByIdInBatch'");
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void deleteAllInBatch() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllInBatch'");
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public ChargePolicy getOne(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getOne'");
+    public CollectionPolitic getOne(Long id) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public ChargePolicy getById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getById'");
+    public CollectionPolitic getById(Long id) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public ChargePolicy getReferenceById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getReferenceById'");
+    public CollectionPolitic getReferenceById(Long id) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public <S extends ChargePolicy> List<S> findAll(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    public <S extends CollectionPolitic> List<S> findAll(Example<S> example) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public <S extends ChargePolicy> List<S> findAll(Example<S> example, Sort sort) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    public <S extends CollectionPolitic> List<S> findAll(Example<S> example, Sort sort) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public <S extends ChargePolicy> List<S> saveAll(Iterable<S> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveAll'");
+    public <S extends CollectionPolitic> List<S> saveAll(Iterable<S> entities) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public List<ChargePolicy> findAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    public List<CollectionPolitic> findAll() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public List<ChargePolicy> findAllById(Iterable<Long> ids) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAllById'");
+    public List<CollectionPolitic> findAllById(Iterable<Long> ids) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public <S extends ChargePolicy> S save(S entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+    public <S extends CollectionPolitic> S save(S entity) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public Optional<ChargePolicy> findById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+    public Optional<CollectionPolitic> findById(Long id) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public boolean existsById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'existsById'");
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public long count() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void deleteById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public void delete(ChargePolicy entity) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    public void delete(CollectionPolitic entity) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void deleteAllById(Iterable<? extends Long> ids) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAllById'");
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public void deleteAll(Iterable<? extends ChargePolicy> entities) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAll'");
+    public void deleteAll(Iterable<? extends CollectionPolitic> entities) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void deleteAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteAll'");
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public List<ChargePolicy> findAll(Sort sort) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    public List<CollectionPolitic> findAll(Sort sort) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public Page<ChargePolicy> findAll(Pageable pageable) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    public Page<CollectionPolitic> findAll(Pageable pageable) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public <S extends ChargePolicy> Optional<S> findOne(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findOne'");
+    public <S extends CollectionPolitic> Optional<S> findOne(Example<S> example) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public <S extends ChargePolicy> Page<S> findAll(Example<S> example, Pageable pageable) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findAll'");
+    public <S extends CollectionPolitic> Page<S> findAll(Example<S> example, Pageable pageable) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public <S extends ChargePolicy> long count(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'count'");
+    public <S extends CollectionPolitic> long count(Example<S> example) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public <S extends ChargePolicy> boolean exists(Example<S> example) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exists'");
+    public <S extends CollectionPolitic> boolean exists(Example<S> example) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
-    public <S extends ChargePolicy, R> R findBy(Example<S> example,
-            Function<FetchableFluentQuery<S>, R> queryFunction) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findBy'");
+    public <S extends CollectionPolitic, R> R findBy(Example<S> example, Function<FetchableFluentQuery<S>, R> queryFunction) {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     

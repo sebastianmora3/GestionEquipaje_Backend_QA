@@ -21,23 +21,25 @@ public class Service_luggage implements Repository_luggage{
     @Autowired
     private Repository_luggage repository_luggage;
 
+    @SuppressWarnings("null")
     @Override
     public List<Luggage> findAll() {
         return repository_luggage.findAll();
     }
 
     @Override
-    public void delete(Luggage entity) {
+    public void delete(@SuppressWarnings("null") Luggage entity) {
         repository_luggage.delete(entity);
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(@SuppressWarnings("null") Long id) {
         repository_luggage.deleteById(id);
     }
 
+    @SuppressWarnings("null")
     @Override
-    public <S extends Luggage> S save(S entity) {
+    public <S extends Luggage> S save(@SuppressWarnings("null") S entity) {
         return repository_luggage.save(entity);
     }
 

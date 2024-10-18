@@ -8,17 +8,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.GestionEquipaje.model.ChargePolicy;
+import com.example.GestionEquipaje.model.CollectionPolitic;
 import com.example.GestionEquipaje.service.Service_policy;
 
 @RestController
-@RequestMapping("/politica")
+@RequestMapping("/Politics")
 public class Controller_policy {
     @Autowired
     private Service_policy service_policy;
     
     @GetMapping
-    private ResponseEntity<List<ChargePolicy>> getAllPolicy () {
+    private ResponseEntity<List<CollectionPolitic>> getAllPolicy () 
+    {
         return ResponseEntity.ok(service_policy.findAll());
     }
     
