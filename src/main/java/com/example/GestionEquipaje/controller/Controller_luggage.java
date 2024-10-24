@@ -1,6 +1,7 @@
 package com.example.GestionEquipaje.controller;
- 
+
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,68 +18,56 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.GestionEquipaje.model.Luggage;
 import com.example.GestionEquipaje.service.Service_luggage;
 
-
 @RestController
 @RequestMapping("/api/Luggage")
 public class Controller_luggage {
 
     @Autowired
     private Service_luggage service_luggage;
-//---------------------------------------------------------------------------
-    // Endpoint -> Para consultar todos los equipajes // FUNCIONA CORRECTAMENTE
 
-       @GetMapping ("/consultar")
-       private ResponseEntity<List<Luggage>> getAllLuggage () {
-           return ResponseEntity.ok(service_luggage.findAll());
-       }
-//---------------------------------------------------------------------------   
-       // Endpoint para obtener equipaje por Id // NO FUNCIONA AUN
-       @GetMapping("/consultar/{id}")
-       public ResponseEntity<Luggage> getLuggageById(@PathVariable("id") long id) {
-           // Llamar al servicio para obtener el equipaje por ID
-           Luggage luggage = service_luggage.getById(id);
-           
-           if (luggage != null) {
-               // Si el equipaje existe, devolverlo con código 200
-               return ResponseEntity.ok(luggage);
-           } else {
-               // Si el equipaje no existe, devolver un código 404 Not Found
-               return ResponseEntity.notFound().build();
-           }
+    // Endpoint -> Para consultar todos los equipajes
+    @GetMapping("/consultar")
+    public ResponseEntity<List<Luggage>> getAllLuggage() {
+        return ResponseEntity.ok(service_luggage.findAll());
     }
 
+    // Endpoint para obtener equipaje por Id
+    @GetMapping("/consultar/{id}")
+    public ResponseEntity<Luggage> getLuggageById(@PathVariable Long id) {
+        Optional<Luggage> luggageOptional = service_luggage.findById(id);
 
-           //---------------------------------------------------------------------------
-    // Endpoint -> Para agregar el equipaje // NO FUNCIONA AUN
+        if (luggageOptional.isPresent()) {
+            return ResponseEntity.ok(luggageOptional.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    // Endpoint -> Para agregar el equipaje
     @PostMapping("/agregar")
-    private ResponseEntity<Luggage> addLuggage (@RequestBody Luggage luggage)  {
+    public ResponseEntity<Luggage> addLuggage(@RequestBody Luggage luggage) {
         Luggage newLuggage = service_luggage.save(luggage);
         return ResponseEntity.status(HttpStatus.CREATED).body(newLuggage);
-    } 
-//---------------------------------------------------------------------------
-    // Endpoint -> Para la modificacion de un equipaje // NO FUNCIONA AUN
-    @PutMapping("path/{id}")
-    public String putMethodName(@PathVariable String id, @RequestBody String entity) {
-        return entity;
     }
-//---------------------------------------------------------------------------
-    //Endpoint -> Para eliminar un equipaje con id // FUNCIONA CORRECTAMENTE
-    
+
+    // Endpoint -> Para la modificación de un equipaje
+    @PutMapping("/modificar/{id}")
+    public ResponseEntity<Luggage> updateLuggage(@PathVariable Long id, @RequestBody Luggage luggage) {
+        Optional<Luggage> existingLuggageOptional = service_luggage.findById(id);
+
+        if (existingLuggageOptional.isPresent()) {
+            luggage.setLuggage_id(id); // Asegúrate de que tu modelo Luggage tenga este método
+            Luggage updatedLuggage = service_luggage.save(luggage);
+            return ResponseEntity.ok(updatedLuggage);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    // Endpoint -> Para eliminar un equipaje con id
     @DeleteMapping("/eliminar/{id}")
-    public String deleteById(@PathVariable("id") Long id) {
+    public ResponseEntity<String> deleteById(@PathVariable("id") Long id) {
         service_luggage.deleteById(id);
-
-        return "Eliminado exitosamente con numero de Id = " + id;
-        
- }
-//----------------------------------------------------------------------------
-
-/*   @Override
-    public void deleteById(@SuppressWarnings("null") Long id) {
-        repository_luggage.deleteById(id);
-    } */
-   
-   
-    // return ResponseEntity.created(new URI("/agregar/"+newLuggage.tLuggage_id())).body(newLuggage);
-
+        return ResponseEntity.ok("Eliminado exitosamente con número de Id = " + id);
+    }
 }
