@@ -16,7 +16,10 @@ public class CollectionPolitic implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_politic;
     private String type_politic;
-    
+
+    // Creamos el constructor vacio
+    public CollectionPolitic() {}
+
     // Creamos el constructor
     public CollectionPolitic(Long id_politic, String type_politic) {
         this.id_politic = id_politic;

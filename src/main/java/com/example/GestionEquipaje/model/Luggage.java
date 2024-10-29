@@ -1,6 +1,9 @@
 package com.example.GestionEquipaje.model;
 
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +21,7 @@ public class Luggage implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "booking_id", nullable = false) // Relación con Booking
+    @JsonBackReference
     private Booking booking; // Cambiado a booking
 
     @ManyToOne

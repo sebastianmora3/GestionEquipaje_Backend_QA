@@ -2,11 +2,10 @@ package com.example.GestionEquipaje.model;
 
 import java.io.Serializable;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "booking")
@@ -16,9 +15,26 @@ public class Booking implements Serializable{
     private Long booking_id;
     private String status;
 
-    public Booking(String status) {
+    @OneToMany(mappedBy = "booking", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Luggage> luggageList;
+
+    //constructor Vacio
+    public Booking (){}
+
+    //Constructo con paramentros
+    public Booking(String status, List<Luggage> luggageList) {
         super();
         this.status = status;
+        this.luggageList = luggageList;
+    }
+
+    public List<Luggage> getLuggageList() {
+        return luggageList;
+    }
+
+    public void setLuggageList(List<Luggage> luggageList) {
+        this.luggageList = luggageList;
     }
 
     public Long getBooking_id() {
