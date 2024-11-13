@@ -39,7 +39,7 @@ public class Luggage implements Serializable {
     // Constructor que recibe todos los parámetros
     public Luggage(Long luggage_id, Booking booking, CollectionPolitic politic, float weight, String dimentions, String luggage_location, int quantity, String type_luggage) {
         this.luggage_id = luggage_id;
-        this.booking = booking; // Usando el nuevo nombre
+        this.booking = booking; 
         this.politic = politic;
         this.weight = weight;
         this.dimentions = dimentions; 
