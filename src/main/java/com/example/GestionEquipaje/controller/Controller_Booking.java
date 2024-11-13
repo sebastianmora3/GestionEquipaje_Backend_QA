@@ -5,9 +5,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.example.GestionEquipaje.model.Booking;
+import com.example.GestionEquipaje.model.Luggage;
 import com.example.GestionEquipaje.service.Service_booking;
 
+import java.util.List;
 import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/bookings")
@@ -16,6 +19,11 @@ public class Controller_Booking {
     @Autowired
     private Service_booking service_booking;
     
+    //Endpoint Para obtener todos los equipajes 
+    @GetMapping("/consultar")
+    public ResponseEntity<List<Booking>> getAllbooking() {
+        return ResponseEntity.ok(service_booking.findAll());
+    }
 
     // Endpoint para obtener una reserva y sus equipajes por ID
     @GetMapping("/{id}")
