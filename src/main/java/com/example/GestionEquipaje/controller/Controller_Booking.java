@@ -15,6 +15,7 @@ public class Controller_Booking {
 
     @Autowired
     private Service_booking service_booking;
+    
 
     // Endpoint para obtener una reserva y sus equipajes por ID
     @GetMapping("/{id}")

@@ -20,12 +20,11 @@ public class Luggage implements Serializable {
     private Long luggage_id;
 
     @ManyToOne
-    @JoinColumn(name = "booking_id", nullable = false) // Relación con Booking
+    @JoinColumn(name = "booking_id", nullable = true) // Relación con Booking
     @JsonBackReference
-    private Booking booking; // Cambiado a booking
-
+    private Booking booking; 
     @ManyToOne
-    @JoinColumn(name = "id_politic", nullable = false) // Relación con CollectionPolitic
+    @JoinColumn(name = "id_politic", nullable = true) // Relación con CollectionPolitic
     private CollectionPolitic politic; // Cambiado a politic
 
     private float weight;
