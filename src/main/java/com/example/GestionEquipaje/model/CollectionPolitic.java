@@ -12,7 +12,6 @@ import jakarta.persistence.Table;
 @Table(name = "politic")
 public class CollectionPolitic implements Serializable{
     @Id
-    
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_politic;
     private String type_politic;
