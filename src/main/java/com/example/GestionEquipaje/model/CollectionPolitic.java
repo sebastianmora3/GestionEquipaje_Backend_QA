@@ -9,25 +9,27 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Politic")
+@Table(name = "politic")
 public class CollectionPolitic implements Serializable{
     @Id
-    
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long changepolitic_id;
+    private Long id_politic;
     private String type_politic;
-    
+
+    // Creamos el constructor vacio
+    public CollectionPolitic() {}
+
     // Creamos el constructor
-    public CollectionPolitic(Long changepolitic_id, String type_politic) {
-        this.changepolitic_id = changepolitic_id;
+    public CollectionPolitic(Long id_politic, String type_politic) {
+        this.id_politic = id_politic;
         this.type_politic = type_politic;
     }
     
-    public Long getChangepolitic_id() {
-        return changepolitic_id;
+    public Long getid_politic() {
+        return id_politic;
     }
-    public void setChangepolitic_id(Long changepolitic_id) {
-        this.changepolitic_id = changepolitic_id;
+    public void setid_politic(Long id_politic) {
+        this.id_politic = id_politic;
     }
     
     public String getType_politic() {
